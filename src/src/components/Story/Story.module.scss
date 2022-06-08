@@ -1,0 +1,126 @@
+.wrapper {
+  display: flex;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  min-height: 120px;
+  width: 100%;
+
+  &:hover .image {
+    filter: grayscale(0);
+  }
+}
+
+.score {
+  background-color: var(--light-color);
+  border: 3px solid var(--grey-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  height: 60px;
+  width: 60px;
+}
+
+.top {
+  border-bottom: 1px solid var(--grey-color);
+  padding: 10px 1rem;
+
+  &-content-wrapper {
+    // background-color: var(--grey-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 12px;
+
+    & > *:not(:first-of-type) {
+      border-left: 1px solid var(--grey-color);
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  flex-direction: column;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+}
+
+.label {
+  font-size: 0.75rem;
+  padding-right: 5px;
+}
+
+.timestamp,
+.author {
+  font-size: 0.75rem;
+}
+
+.title {
+  color: var(--primary-color);
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
+
+.user-karma {
+  background-color: #d6d2ff;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+
+.date {
+  background-color: #ffd2e3;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+
+.description {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.image {
+  display: block;
+  flex-shrink: 0;
+  filter: grayscale(1);
+  height: auto;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  @media only screen and (min-width: 600px) {
+    margin-right: 1rem;
+    max-width: 100%;
+    width: 230px;
+  }
+}
+
+.readmore {
+  color: var(--secondary-color);
+  display: inline-block;
+  font-size: 0.75rem;
+  padding-top: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
