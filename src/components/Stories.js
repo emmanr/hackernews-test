@@ -17,10 +17,11 @@ const StoriesContainer = () => {
   useEffect(() => {
     if (filteredStoryIds.length) {
       const storyArray = filteredStoryIds.map(id => `https://hacker-news.firebaseio.com/v0/item/${id}.json`);
-      const allStories = Promise.all(storyArray.map(async (story) => {
-      const fetching = await fetch(story);
-      return await fetching.json();
+      Promise.all(storyArray.map(async (story) => {
+        const fetching = await fetch(story);
+        return fetching.json();
       })).then(values => {
+        console.log(values);
         const sortedValues = values.sort((a, b) => a.score - b.score);
         setStories(sortedValues);
         setLoading(true);
